@@ -3,7 +3,7 @@ package org.example.payment;
 import org.springframework.stereotype.Component;
 
 
-@Component
+//@Component
 
 public class creditCard implements paymentMethod{
     @Override

@@ -15,4 +15,8 @@ public class  AppConfig {
         return new User("Manish", 27); // jase hi spring app config ko read karega wo inka result ampne ioc container
         // store kar lega
     }
+    @Bean
+    public paymentMethod  CreateCardPayment(){
+        return new creditCard.pay();
+    }
 }
