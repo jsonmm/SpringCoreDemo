@@ -14,6 +14,7 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         orderService order = context.getBean(orderService.class);
         order.placeOrder();
-
+        User user = context.getBean(User.class);
+        System.out.println(user.getName());
     }
 }

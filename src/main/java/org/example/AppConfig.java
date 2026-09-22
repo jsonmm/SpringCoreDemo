@@ -1,5 +1,6 @@
 package org.example;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,4 +9,10 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("org.example")
 
 public class  AppConfig {
+    @Bean
+    public User createUser()
+    {
+        return new User("Manish", 27); // jase hi spring app config ko read karega wo inka result ampne ioc container
+        // store kar lega
+    }
 }

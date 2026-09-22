@@ -9,16 +9,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class orderService {
+//    @Autowired
+//    @Qualifier("creditCard")
     public paymentMethod pay ;
 //    @Autowired
-//    public orderService(@Qualifier("cod") paymentMethod pay)
-//    {
-//        this.pay = pay;
-//    }
-    @Autowired
-    public void setPay(@Qualifier("cod") paymentMethod pay) {
+    public orderService(@Qualifier("creditCard ") paymentMethod pay)
+    {
         this.pay = pay;
     }
+//    @Autowired
+//    public void setPay(@Qualifier("cod") paymentMethod pay) {
+//        this.pay = pay;
+//    }
 
     public void placeOrder()
     {
