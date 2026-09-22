@@ -25,18 +25,17 @@ public class  AppConfig {
         return new creditCard();
     }
     @Bean
-    @Primary
     public paymentMethod createCreditPaymentBean()
     {
         return new creditCard();
     }
-    @Bean
-    public paymentMethod createUpiBean()
-    {
-        return new UPIservice();
-    }
+//    @Bean
+//    public paymentMethod createUpiBean()
+//    {
+//        return new UPIservice();
+//    }
     @Bean
     public orderService createNewOrderBean(paymentMethod paymentMethod){
-       return new orderService(paymentMethod);
+       retur n new orderService(paymentMethod);
     }
 }

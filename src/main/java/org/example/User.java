@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 
 public class User {
-    String name;
-    int age;
+    private String name;
+    private int age;
     public User(String name, int age)
     {
         this.name = name;

@@ -12,13 +12,12 @@ import org.springframework.stereotype.Component;
 public class  orderService {
 
     private paymentMethod pay ;
+    //@Autowired
 
-    public orderService(paymentMethod pay)
-    {
+
+    public  orderService(paymentMethod pay) {
         this.pay = pay;
-
     }
-
 
     public void placeOrder()
     {
