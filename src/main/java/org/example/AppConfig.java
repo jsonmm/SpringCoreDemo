@@ -1,10 +1,13 @@
 package org.example;
 
+import org.example.payment.UPIservice;
 import org.example.payment.creditCard;
 import org.example.payment.paymentMethod;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 
 @Configuration
@@ -22,13 +25,18 @@ public class  AppConfig {
         return new creditCard();
     }
     @Bean
+    @Primary
     public paymentMethod createCreditPayment()
     {
         return new creditCard();
     }
-
+    @Bean
+    public paymentMethod createUpi()
+    {
+        return new UPIservice();
+    }
     @Bean
     public orderService createNewOrder(paymentMethod paymentMethod){
-        return new orderService();
+       return new orderService(paymentMethod);
     }
 }

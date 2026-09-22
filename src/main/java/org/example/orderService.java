@@ -8,22 +8,20 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
-@Component
-public class orderService {
 
-    //    @Autowired
-//    @Qualifier("creditCard")
-    public paymentMethod pay ;
-//    @Autowired
+public class  orderService {
+
+    private paymentMethod pay ;
+
     public orderService(paymentMethod pay)
     {
         this.pay = pay;
 
     }
-//    @Autowired
-//    public void setPay(@Qualifier("cod") paymentMethod pay) {
-//        this.pay = pay;
-//    }
+  @Autowired
+    public void setPay(@Qualifier("creditCard ") paymentMethod pay) {
+        this.pay = pay;
+    }
 
     public void placeOrder()
     {
