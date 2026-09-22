@@ -13,7 +13,7 @@ public class orderService {
 //    @Qualifier("creditCard")
     public paymentMethod pay ;
 //    @Autowired
-    public orderService(@Qualifier("creditCard ") paymentMethod pay)
+    public orderService(paymentMethod pay)
     {
         this.pay = pay;
     }
