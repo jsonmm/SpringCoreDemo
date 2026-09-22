@@ -15,28 +15,28 @@ import org.springframework.context.annotation.Primary;
 
 public class  AppConfig {
     @Bean
-    public User createUser()
+    public User createUserBean()
     {
         return new User("Manish", 27); // jase hi spring app config ko read karega wo inka result ampne ioc container
         // store kar lega
     }
     @Bean
-    public paymentMethod CreateCardPayment(){
+    public paymentMethod CreateCardPaymentBean(){
         return new creditCard();
     }
     @Bean
     @Primary
-    public paymentMethod createCreditPayment()
+    public paymentMethod createCreditPaymentBean()
     {
         return new creditCard();
     }
     @Bean
-    public paymentMethod createUpi()
+    public paymentMethod createUpiBean()
     {
         return new UPIservice();
     }
     @Bean
-    public orderService createNewOrder(paymentMethod paymentMethod){
+    public orderService createNewOrderBean(paymentMethod paymentMethod){
        return new orderService(paymentMethod);
     }
 }

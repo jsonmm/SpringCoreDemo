@@ -18,10 +18,7 @@ public class  orderService {
         this.pay = pay;
 
     }
-  @Autowired
-    public void setPay(@Qualifier("creditCard ") paymentMethod pay) {
-        this.pay = pay;
-    }
+
 
     public void placeOrder()
     {
