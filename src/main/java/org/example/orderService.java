@@ -8,19 +8,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
-//@Component
+@Component
 public class orderService {
-    private final User createUser;
-    private final creditCard creditCard;
+
     //    @Autowired
 //    @Qualifier("creditCard")
     public paymentMethod pay ;
 //    @Autowired
-    public orderService(@Qualifier("creditCard") paymentMethod pay, User createUser, creditCard creditCard)
+    public orderService(paymentMethod pay)
     {
         this.pay = pay;
-        this.createUser = createUser;
-        this.creditCard = creditCard;
+
     }
 //    @Autowired
 //    public void setPay(@Qualifier("cod") paymentMethod pay) {

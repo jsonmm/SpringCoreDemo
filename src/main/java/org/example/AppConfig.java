@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.payment.creditCard;
+import org.example.payment.paymentMethod;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +18,17 @@ public class  AppConfig {
         // store kar lega
     }
     @Bean
-    public paymentMethod  CreateCardPayment(){
-        return new creditCard.pay();
+    public paymentMethod CreateCardPayment(){
+        return new creditCard();
+    }
+    @Bean
+    public paymentMethod createCreditPayment()
+    {
+        return new creditCard();
+    }
+
+    @Bean
+    public orderService createNewOrder(paymentMethod paymentMethod){
+        return new orderService();
     }
 }
