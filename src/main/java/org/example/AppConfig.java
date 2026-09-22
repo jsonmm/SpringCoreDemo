@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Primary;
 
 
 @Configuration
-@ComponentScan("org.example")
+
 
 public class  AppConfig {
     @Bean
@@ -21,21 +21,19 @@ public class  AppConfig {
         // store kar lega
     }
     @Bean
+    @Qualifier
     public paymentMethod CreateCardPaymentBean(){
         return new creditCard();
     }
+
+    @Qualifier
     @Bean
-    public paymentMethod createCreditPaymentBean()
+    public paymentMethod createUpiBean()
     {
-        return new creditCard();
+        return new UPIservice();
     }
-//    @Bean
-//    public paymentMethod createUpiBean()
-//    {
-//        return new UPIservice();
-//    }
     @Bean
-    public orderService createNewOrderBean(paymentMethod paymentMethod){
-       retur n new orderService(paymentMethod);
+    public orderService createNewOrderBean(@Qualifier("createUpiBean") paymentMethod paymentMethod){
+       return new orderService(paymentMethod);
     }
 }
